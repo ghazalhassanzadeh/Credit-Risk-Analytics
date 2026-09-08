@@ -1,0 +1,4 @@
+experiment_id,design,family,feature_variant,evaluation,capacity_percent,reviewed_loans,captured_chargeoffs,capture_percent,precision_percent,lift,main_illustration,scenario_label
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,5,4872,3437,52.55351682,70.54597701,10.5105955,False,Top 5%
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,10,9744,5383,82.3088685,55.24425287,8.230802379,True,Top 10%
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,20,19488,6261,95.73394495,32.12746305,4.786648123,False,Top 20%

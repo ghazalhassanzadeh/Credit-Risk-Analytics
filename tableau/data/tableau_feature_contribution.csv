@@ -1,0 +1,9 @@
+feature,mean_pr_auc_decrease,sd_pr_auc_decrease,mean_brier_increase,feature_label,rank
+term_months,0.5925365653,0.002119343994,0.05117038931,Original term,1
+initial_interest_rate,0.1026223222,0.005900571115,0.007149819113,Initial interest rate,2
+guarantee_percent,0.07955635002,0.003795216717,0.005495895818,Guarantee percentage,3
+project_state,0.04401083387,0.003768967101,0.002650796451,ProjectState,4
+gross_approval,0.01829554052,0.004579789663,0.001318693572,Gross Approval,5
+naics2,0.01310516238,0.002824974551,0.000653810488,Two-digit NAICS,6
+business_type,0.005258367858,0.001237129715,0.0001891056087,Business type,7
+business_age,0.004089428733,0.001670442234,0.0002864793392,Business age,8

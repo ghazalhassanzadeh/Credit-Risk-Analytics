@@ -1,0 +1,9 @@
+check,passed
+Only approved feature names loaded,True
+Target and post-approval fields excluded from predictors,True
+Verified exact repeats removed globally,True
+Temporal train and locked test do not overlap,True
+Terms valid,True
+Amounts and guarantee percentage valid,True
+Complete 120-month windows,True
+FY2016 partial-vintage cutoff retained,True

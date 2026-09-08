@@ -1,0 +1,2 @@
+candidate_start_fy,horizon_months,eligible_loans,gross_approval,gross_chargeoff_amount,flagged_financial_chargeoffs,gross_chargeoff_rate_percent,sensitivity_gross_chargeoff_rate_percent,measure_label
+2010,120,308134,1.078726382e+11,3038015696,647,2.816299,2.68848,Recorded GrossChargeOffAmount as a share of Gross Approval

@@ -1,0 +1,10 @@
+factor,after_vintage_adjustment,after_portfolio_mix_adjustment,adjusted_conclusion,move_forward_status
+Loan size,Persisted,Reversed and non-linear,The pooled smaller-loan pattern was mainly explained by portfolio mix,Retain as a continuous non-linear candidate without a fixed direction
+Original term,Persisted,Persisted strongly and non-linearly,Short terms remained the clearest high-frequency group,Retain with non-linear treatment and horizon sensitivity
+Two-digit industry,Partly persisted,Weakened,The pooled top-industry ordering did not survive adjustment,Retain with volume multiplicity and stability controls
+ProjectState,Partly persisted,Mixed,Florida persisted while the Texas difference weakened,Test with and without state and check temporal calibration
+Business age,Persisted,Persisted but weakened,Startup and early-stage differences remained practically material,Retain while preserving the historical-definition limitation
+Business type,Persisted,Weakened,The individual difference became small while the partnership difference remained,Retain as a candidate and judge later predictive value
+Processing method,Limited by programme periods,Not reliably comparable,Poor common support prevented stable named-method rankings,Test models with and without the field
+Guarantee percentage,Persisted,Persisted non-linearly,The relationship rose between 50 and 75 percent and then flattened,Retain as a continuous non-linear candidate
+Initial interest rate,Persisted,Persisted non-linearly,The association remained large but cannot be interpreted causally,Retain for FY2010+ only

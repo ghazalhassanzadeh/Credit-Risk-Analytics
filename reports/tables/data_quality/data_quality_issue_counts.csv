@@ -1,0 +1,153 @@
+period,issue,affected_count,percent_of_period_rows
+FY1991-FY1999,ApprovalDate after AsOfDate,0,0.0
+FY1991-FY1999,ApprovalDate: non-null value did not parse,0,0.0
+FY1991-FY1999,ApprovalFY inconsistent with ApprovalDate fiscal year,0,0.0
+FY1991-FY1999,AsOfDate: non-null value did not parse,0,0.0
+FY1991-FY1999,Both PaidInFullDate and ChargeOffDate present,0,0.0
+FY1991-FY1999,CHGOFF status missing ChargeOffDate,38,0.011275
+FY1991-FY1999,CHGOFF status with zero or missing GrossChargeOffAmount,157,0.046583
+FY1991-FY1999,ChargeOffDate after AsOfDate,1,0.000297
+FY1991-FY1999,ChargeOffDate before ApprovalDate,0,0.0
+FY1991-FY1999,ChargeOffDate: non-null value did not parse,0,0.0
+FY1991-FY1999,FirstDisbursementDate after AsOfDate,0,0.0
+FY1991-FY1999,FirstDisbursementDate before ApprovalDate,507,0.15043
+FY1991-FY1999,FirstDisbursementDate: non-null value did not parse,0,0.0
+FY1991-FY1999,GrossApproval less than or equal to zero,3,0.00089
+FY1991-FY1999,GrossChargeOffAmount exceeds 150 percent of GrossApproval,83,0.024627
+FY1991-FY1999,GrossChargeOffAmount exceeds GrossApproval,758,0.224904
+FY1991-FY1999,GrossChargeOffAmount less than zero,0,0.0
+FY1991-FY1999,InitialInterestRate above 100,0,0.0
+FY1991-FY1999,InitialInterestRate above 25,0,0.0
+FY1991-FY1999,InitialInterestRate below zero,0,0.0
+FY1991-FY1999,InitialInterestRate equals zero,0,0.0
+FY1991-FY1999,JobsSupported above 1000,1,0.000297
+FY1991-FY1999,JobsSupported above 500,3,0.00089
+FY1991-FY1999,JobsSupported below zero,0,0.0
+FY1991-FY1999,JobsSupported is fractional,0,0.0
+FY1991-FY1999,NAICS code has an unrecognised 2-digit sector,0,0.0
+FY1991-FY1999,Non-CHGOFF status with ChargeOffDate,0,0.0
+FY1991-FY1999,Non-CHGOFF status with positive GrossChargeOffAmount,0,0.0
+FY1991-FY1999,Non-P I F status with PaidInFullDate,0,0.0
+FY1991-FY1999,P I F status missing PaidInFullDate,0,0.0
+FY1991-FY1999,PaidInFullDate after AsOfDate,0,0.0
+FY1991-FY1999,PaidInFullDate before ApprovalDate,0,0.0
+FY1991-FY1999,PaidInFullDate: non-null value did not parse,0,0.0
+FY1991-FY1999,SBAGuaranteedApproval exceeds GrossApproval,1,0.000297
+FY1991-FY1999,SBAGuaranteedApproval less than zero,1,0.000297
+FY1991-FY1999,TermInMonths exceeds 360,64,0.018989
+FY1991-FY1999,TermInMonths is fractional,0,0.0
+FY1991-FY1999,TermInMonths less than or equal to zero,211,0.062605
+FY2000-FY2009,ApprovalDate after AsOfDate,0,0.0
+FY2000-FY2009,ApprovalDate: non-null value did not parse,0,0.0
+FY2000-FY2009,ApprovalFY inconsistent with ApprovalDate fiscal year,0,0.0
+FY2000-FY2009,AsOfDate: non-null value did not parse,0,0.0
+FY2000-FY2009,Both PaidInFullDate and ChargeOffDate present,0,0.0
+FY2000-FY2009,CHGOFF status missing ChargeOffDate,5,0.000724
+FY2000-FY2009,CHGOFF status with zero or missing GrossChargeOffAmount,7,0.001014
+FY2000-FY2009,ChargeOffDate after AsOfDate,0,0.0
+FY2000-FY2009,ChargeOffDate before ApprovalDate,0,0.0
+FY2000-FY2009,ChargeOffDate: non-null value did not parse,0,0.0
+FY2000-FY2009,FirstDisbursementDate after AsOfDate,1,0.000145
+FY2000-FY2009,FirstDisbursementDate before ApprovalDate,13,0.001883
+FY2000-FY2009,FirstDisbursementDate: non-null value did not parse,0,0.0
+FY2000-FY2009,GrossApproval less than or equal to zero,0,0.0
+FY2000-FY2009,GrossChargeOffAmount exceeds 150 percent of GrossApproval,1572,0.227716
+FY2000-FY2009,GrossChargeOffAmount exceeds GrossApproval,3736,0.541188
+FY2000-FY2009,GrossChargeOffAmount less than zero,0,0.0
+FY2000-FY2009,InitialInterestRate above 100,0,0.0
+FY2000-FY2009,InitialInterestRate above 25,2,0.00029
+FY2000-FY2009,InitialInterestRate below zero,0,0.0
+FY2000-FY2009,InitialInterestRate equals zero,2,0.00029
+FY2000-FY2009,JobsSupported above 1000,18,0.002607
+FY2000-FY2009,JobsSupported above 500,79,0.011444
+FY2000-FY2009,JobsSupported below zero,0,0.0
+FY2000-FY2009,JobsSupported is fractional,0,0.0
+FY2000-FY2009,NAICS code has an unrecognised 2-digit sector,0,0.0
+FY2000-FY2009,Non-CHGOFF status with ChargeOffDate,0,0.0
+FY2000-FY2009,Non-CHGOFF status with positive GrossChargeOffAmount,0,0.0
+FY2000-FY2009,Non-P I F status with PaidInFullDate,0,0.0
+FY2000-FY2009,P I F status missing PaidInFullDate,0,0.0
+FY2000-FY2009,PaidInFullDate after AsOfDate,0,0.0
+FY2000-FY2009,PaidInFullDate before ApprovalDate,2,0.00029
+FY2000-FY2009,PaidInFullDate: non-null value did not parse,0,0.0
+FY2000-FY2009,SBAGuaranteedApproval exceeds GrossApproval,0,0.0
+FY2000-FY2009,SBAGuaranteedApproval less than zero,0,0.0
+FY2000-FY2009,TermInMonths exceeds 360,12,0.001738
+FY2000-FY2009,TermInMonths is fractional,0,0.0
+FY2000-FY2009,TermInMonths less than or equal to zero,909,0.131676
+FY2010-FY2019,ApprovalDate after AsOfDate,0,0.0
+FY2010-FY2019,ApprovalDate: non-null value did not parse,0,0.0
+FY2010-FY2019,ApprovalFY inconsistent with ApprovalDate fiscal year,0,0.0
+FY2010-FY2019,AsOfDate: non-null value did not parse,0,0.0
+FY2010-FY2019,Both PaidInFullDate and ChargeOffDate present,0,0.0
+FY2010-FY2019,CHGOFF status missing ChargeOffDate,10,0.001832
+FY2010-FY2019,CHGOFF status with zero or missing GrossChargeOffAmount,11,0.002016
+FY2010-FY2019,ChargeOffDate after AsOfDate,9,0.001649
+FY2010-FY2019,ChargeOffDate before ApprovalDate,0,0.0
+FY2010-FY2019,ChargeOffDate: non-null value did not parse,0,0.0
+FY2010-FY2019,FirstDisbursementDate after AsOfDate,0,0.0
+FY2010-FY2019,FirstDisbursementDate before ApprovalDate,421,0.077141
+FY2010-FY2019,FirstDisbursementDate: non-null value did not parse,0,0.0
+FY2010-FY2019,GrossApproval less than or equal to zero,0,0.0
+FY2010-FY2019,GrossChargeOffAmount exceeds 150 percent of GrossApproval,359,0.065781
+FY2010-FY2019,GrossChargeOffAmount exceeds GrossApproval,1205,0.220797
+FY2010-FY2019,GrossChargeOffAmount less than zero,0,0.0
+FY2010-FY2019,InitialInterestRate above 100,0,0.0
+FY2010-FY2019,InitialInterestRate above 25,0,0.0
+FY2010-FY2019,InitialInterestRate below zero,0,0.0
+FY2010-FY2019,InitialInterestRate equals zero,8,0.001466
+FY2010-FY2019,JobsSupported above 1000,3,0.00055
+FY2010-FY2019,JobsSupported above 500,8,0.001466
+FY2010-FY2019,JobsSupported below zero,0,0.0
+FY2010-FY2019,JobsSupported is fractional,0,0.0
+FY2010-FY2019,NAICS code has an unrecognised 2-digit sector,0,0.0
+FY2010-FY2019,Non-CHGOFF status with ChargeOffDate,0,0.0
+FY2010-FY2019,Non-CHGOFF status with positive GrossChargeOffAmount,0,0.0
+FY2010-FY2019,Non-P I F status with PaidInFullDate,0,0.0
+FY2010-FY2019,P I F status missing PaidInFullDate,0,0.0
+FY2010-FY2019,PaidInFullDate after AsOfDate,0,0.0
+FY2010-FY2019,PaidInFullDate before ApprovalDate,2,0.000366
+FY2010-FY2019,PaidInFullDate: non-null value did not parse,0,0.0
+FY2010-FY2019,SBAGuaranteedApproval exceeds GrossApproval,0,0.0
+FY2010-FY2019,SBAGuaranteedApproval less than zero,0,0.0
+FY2010-FY2019,TermInMonths exceeds 360,13,0.002382
+FY2010-FY2019,TermInMonths is fractional,0,0.0
+FY2010-FY2019,TermInMonths less than or equal to zero,229,0.041961
+FY2020-FY2026 YTD,ApprovalDate after AsOfDate,0,0.0
+FY2020-FY2026 YTD,ApprovalDate: non-null value did not parse,0,0.0
+FY2020-FY2026 YTD,ApprovalFY inconsistent with ApprovalDate fiscal year,0,0.0
+FY2020-FY2026 YTD,AsOfDate: non-null value did not parse,0,0.0
+FY2020-FY2026 YTD,Both PaidInFullDate and ChargeOffDate present,0,0.0
+FY2020-FY2026 YTD,CHGOFF status missing ChargeOffDate,5,0.001288
+FY2020-FY2026 YTD,CHGOFF status with zero or missing GrossChargeOffAmount,5,0.001288
+FY2020-FY2026 YTD,ChargeOffDate after AsOfDate,22,0.005665
+FY2020-FY2026 YTD,ChargeOffDate before ApprovalDate,0,0.0
+FY2020-FY2026 YTD,ChargeOffDate: non-null value did not parse,0,0.0
+FY2020-FY2026 YTD,FirstDisbursementDate after AsOfDate,0,0.0
+FY2020-FY2026 YTD,FirstDisbursementDate before ApprovalDate,0,0.0
+FY2020-FY2026 YTD,FirstDisbursementDate: non-null value did not parse,0,0.0
+FY2020-FY2026 YTD,GrossApproval less than or equal to zero,0,0.0
+FY2020-FY2026 YTD,GrossChargeOffAmount exceeds 150 percent of GrossApproval,44,0.01133
+FY2020-FY2026 YTD,GrossChargeOffAmount exceeds GrossApproval,326,0.083947
+FY2020-FY2026 YTD,GrossChargeOffAmount less than zero,0,0.0
+FY2020-FY2026 YTD,InitialInterestRate above 100,0,0.0
+FY2020-FY2026 YTD,InitialInterestRate above 25,0,0.0
+FY2020-FY2026 YTD,InitialInterestRate below zero,0,0.0
+FY2020-FY2026 YTD,InitialInterestRate equals zero,87,0.022403
+FY2020-FY2026 YTD,JobsSupported above 1000,0,0.0
+FY2020-FY2026 YTD,JobsSupported above 500,1,0.000258
+FY2020-FY2026 YTD,JobsSupported below zero,0,0.0
+FY2020-FY2026 YTD,JobsSupported is fractional,0,0.0
+FY2020-FY2026 YTD,NAICS code has an unrecognised 2-digit sector,0,0.0
+FY2020-FY2026 YTD,Non-CHGOFF status with ChargeOffDate,0,0.0
+FY2020-FY2026 YTD,Non-CHGOFF status with positive GrossChargeOffAmount,0,0.0
+FY2020-FY2026 YTD,Non-P I F status with PaidInFullDate,1,0.000258
+FY2020-FY2026 YTD,P I F status missing PaidInFullDate,0,0.0
+FY2020-FY2026 YTD,PaidInFullDate after AsOfDate,0,0.0
+FY2020-FY2026 YTD,PaidInFullDate before ApprovalDate,2,0.000515
+FY2020-FY2026 YTD,PaidInFullDate: non-null value did not parse,0,0.0
+FY2020-FY2026 YTD,SBAGuaranteedApproval exceeds GrossApproval,0,0.0
+FY2020-FY2026 YTD,SBAGuaranteedApproval less than zero,0,0.0
+FY2020-FY2026 YTD,TermInMonths exceeds 360,1,0.000258
+FY2020-FY2026 YTD,TermInMonths is fractional,0,0.0
+FY2020-FY2026 YTD,TermInMonths less than or equal to zero,11,0.002833

@@ -1,0 +1,20 @@
+field,assessment,reason
+GrossApproval,Candidate,Approved amount known at approval
+TermInMonths,Candidate,Approved term known at approval
+NaicsCode,Candidate,Industry code available at approval
+ProjectState,Candidate,Project geography available at approval
+BusinessType,Candidate,Borrower legal form at approval
+BusinessAge,Candidate,Reported business-age category
+InitialInterestRate,FY2010+ candidate,Available at approval but incomplete in earlier periods
+ProcessingMethod,Sensitivity only,Available at approval but not stable enough for the final model
+SBAGuaranteedApproval,Derived input only,Used with GrossApproval to calculate guarantee percentage
+ApprovalFY,Split only,"Used for temporal validation, not prediction"
+JobsSupported,Exclude,"Application estimate, not a core risk field"
+LocationID,Exclude,Lender identity is outside project scope
+FirstDisbursementDate,Exclude,Occurs after loan approval
+SoldSecMrktInd,Exclude,May be updated after approval
+LoanStatus,Outcome,Defines outcome or censoring state
+PaidInFullDate,Outcome,Observed after approval
+ChargeOffDate,Outcome,Observed after approval
+GrossChargeOffAmount,Outcome,Observed after approval
+AsOfDate,Metadata,Publication snapshot date

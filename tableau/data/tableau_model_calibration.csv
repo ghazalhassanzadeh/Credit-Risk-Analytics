@@ -1,0 +1,11 @@
+experiment_id,design,family,feature_variant,evaluation,risk_bin,loans,chargeoffs,mean_predicted_risk,observed_risk
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,1,9747,5,0.000612103744,0.0005129783523
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,2,9741,8,0.0008464126642,0.0008212709167
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,3,9744,9,0.001060890121,0.0009236453202
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,4,9744,10,0.001389207338,0.001026272578
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,5,9744,20,0.002072044853,0.002052545156
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,6,9743,26,0.003545623218,0.002668582572
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,7,9744,57,0.006718107563,0.005849753695
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,8,9744,144,0.01701380407,0.01477832512
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,9,9744,878,0.0775138822,0.09010673235
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,10,9744,5383,0.4744365639,0.5524425287

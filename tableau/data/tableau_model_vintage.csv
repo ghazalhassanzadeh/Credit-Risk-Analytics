@@ -1,0 +1,3 @@
+experiment_id,design,family,feature_variant,evaluation,approval_fy,loans,chargeoffs,prevalence,pr_auc,roc_auc,brier,calibration_intercept,calibration_slope,mean_predicted_risk,vintage_label
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,2015,55336,3642,0.06581610525,0.6565550369,0.9656616507,0.03253069814,0.3168750398,1.075670585,0.05865583886,FY2015
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,2016,42103,2898,0.06883119968,0.6566713739,0.961600452,0.03442033926,0.3777434397,1.042430896,0.05834475542,FY2016 eligible approvals

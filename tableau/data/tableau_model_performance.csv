@@ -1,0 +1,5 @@
+experiment_id,design,family,feature_variant,evaluation,loans,chargeoffs,prevalence,pr_auc,roc_auc,brier,calibration_intercept,calibration_slope,mean_predicted_risk,model_role,display_order
+E06,FY2010+,boost,add_state,locked_test_uncalibrated,97439,6540,0.06711891542,0.6563126263,0.963824386,0.03334720447,0.3432046594,1.060717944,0.05852142096,Primary model,1
+E02,FY2010+,logistic,add_state,locked_test_uncalibrated,97439,6540,0.06711891542,0.3789701283,0.8760598474,0.05014734992,0.4486688666,1.108959126,0.05715156994,Logistic baseline,2
+E08,FY2010+,boost,full_candidate,locked_test_uncalibrated,97439,6540,0.06711891542,0.658638704,0.964028605,0.03311374821,0.3498055565,1.064389625,0.05849972681,ProcessingMethod sensitivity,3
+E14,FY2001+,boost,add_state,locked_test_uncalibrated,97439,6540,0.06711891542,0.6216269645,0.9626784237,0.03544322129,-0.4466574132,1.089133873,0.08595709456,FY2001+ stress comparison,4

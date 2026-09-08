@@ -1,0 +1,30 @@
+{
+  "FY2010+": {
+    "logistic": {
+      "form": "spline",
+      "C": 0.1
+    },
+    "boost": {
+      "learning_rate": 0.08,
+      "max_iter": 150,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 500,
+      "l2_regularization": 1.0
+    }
+  },
+  "FY2001+": {
+    "logistic": {
+      "form": "simple",
+      "C": 0.1
+    },
+    "boost": {
+      "learning_rate": 0.08,
+      "max_iter": 150,
+      "max_leaf_nodes": 31,
+      "min_samples_leaf": 500,
+      "l2_regularization": 1.0
+    }
+  },
+  "locked_before_test": true,
+  "selection_note": "Selected only from forward validation. High-C spline fits that reached iteration limits were not retained."
+}

@@ -1,0 +1,13 @@
+measure,count
+published_rows,1961455
+verified_repeated_rows_removed,1918
+fixed_horizon_before_validity_checks,878511
+excluded_invalid_term,1059
+excluded_invalid_amount,0
+clean_fy2001_plus_rows,877452
+analysis_rows,307957
+analysis_columns,12
+chargeoffs_within_120_months,20199
+chargeoffs_within_96_months,18397
+first_approval_fy,2010
+last_approval_fy,2016

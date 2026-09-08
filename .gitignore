@@ -29,3 +29,24 @@ data/processed/
 # Temporary files
 *.tmp
 *.log
+# External/local data
+data/external/
+
+# Alternative virtual environment name
+venv/
+
+# Fitted model artifacts
+*.joblib
+
+# Generated machine-readable report summaries
+reports/**/*.json
+
+# Detailed modelling files generated during a full local rerun
+reports/tables/modeling/development_tuning_results.csv
+reports/tables/modeling/validation_candidate_metrics.csv
+reports/tables/modeling/validation_capacity_metrics.csv
+reports/tables/modeling/validation_unseen_category_rates.csv
+reports/tables/modeling/locked_test_unseen_category_rates.csv
+reports/tables/modeling/recalibration_validation_evidence.csv
+reports/tables/modeling/missingness_by_split.csv
+reports/tables/modeling/pre_model_cohort_audit.csv

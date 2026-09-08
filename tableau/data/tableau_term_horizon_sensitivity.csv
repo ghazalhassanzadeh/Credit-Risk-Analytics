@@ -1,0 +1,10 @@
+dimension,segment,eligible_loans,chargeoffs_within_96_months,chargeoffs_within_120_months,risk_96_month_percent,risk_120_month_percent,additional_risk_96_to_120_pp,share_120_month_events_captured_by_96_percent,valid_term_for_primary_model
+overall,All eligible loans,308134,18482,20299,5.99804,6.587718,0.589679,91.04882,True
+term_band,85 to 120,64122,2951,3100,4.602165,4.834534,0.23237,95.193548,True
+term_band,241 to 360,39482,456,537,1.154957,1.360113,0.205157,84.916201,True
+term_band,13 to 60,58667,8584,9438,14.631735,16.087409,1.455674,90.951473,True
+term_band,61 to 84,110484,3743,3953,3.387821,3.577894,0.190073,94.687579,True
+term_band,181 to 240,11449,340,479,2.969692,4.183772,1.21408,70.981211,True
+term_band,121 to 180,16493,321,398,1.94628,2.413145,0.466865,80.653266,True
+term_band,1 to 12,7260,2002,2294,27.575758,31.597796,4.022039,87.271142,True
+term_band,Invalid or missing,177,85,100,48.022599,56.497175,8.474576,85,False
