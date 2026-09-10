@@ -37,6 +37,8 @@ venv/
 
 # Fitted model artifacts
 *.joblib
+*.pkl
+*.pickle
 
 # Generated machine-readable report summaries
 reports/**/*.json
