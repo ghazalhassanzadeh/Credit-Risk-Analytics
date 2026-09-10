@@ -10,7 +10,7 @@ An end-to-end portfolio-risk analysis of the U.S. Small Business Administration 
 
 This project examines how SBA 7(a) lending volume, exposure, and long-horizon charge-off risk vary across time, loan size, term, borrower characteristics, industry, and geography. It also evaluates whether a predictive model can support retrospective portfolio monitoring and risk-based review prioritisation.
 
-The analysis covers **1,961,455 loans from FY1991 through June 2026**. Ten-year charge-off outcomes are limited to **FY2001–FY2016**, where a complete 120-month performance window is available.
+The source data contains **1,961,455 published loan records from FY1991 through June 2026**. Verified exact repeated records were removed during cohort preparation. Ten-year charge-off outcomes are limited to **FY2001–FY2016**, where a complete 120-month performance window is available.
 
 ## Business questions
 
@@ -198,7 +198,7 @@ The `develop` and `test` stages refit multiple models and may take considerable 
 - pandas and NumPy
 - scikit-learn
 - SciPy
-- Matplotlib and Seaborn
+- Matplotlib
 - Excel
 - Tableau Public
 - Git and GitHub

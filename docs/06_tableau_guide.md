@@ -1,88 +1,104 @@
-# Tableau dashboard guide
+# Tableau story guide
 
-## Dashboard concept
+## Story concept
 
-The planned Tableau portfolio uses four connected dashboards to tell the project story:
+The completed Tableau portfolio uses five connected story points:
 
-**Context → Concentration → Adjustment → Model**
+**Portfolio Context → Risk and Exposure → Geography → Statistical Adjustment → Model Monitoring**
 
-The workbook will be built manually in Tableau Desktop using the safe aggregate CSV files in `tableau/data/`. These files do not contain borrower-level records, identifying information or individual model scores.
+The interactive story was built in Tableau Desktop using privacy-safe aggregate CSV files from `tableau/data/`. These sources do not contain borrower-level records, identifying information, or individual model scores.
 
-## 1. Portfolio context
+## 1. How the portfolio changed
 
-**Question:** How did lending activity and historical charge-off risk change over time?
+**Question:** How did SBA 7(a) lending activity and historical charge-off risk change over time?
 
-The first dashboard will combine:
+This story point combines:
 
-* Approval count by fiscal year
-* Gross approval by fiscal year
-* Ten-year charge-off rate by approval vintage
+- approval count by fiscal year
+- gross approval amount by fiscal year
+- ten-year charge-off rate by approval vintage
 
-The main message is that portfolio risk changed considerably across economic periods. For example, the ten-year charge-off rate reached 35.78% for FY2007 approvals before falling below 9% in FY2010.
+The results show that portfolio risk changed substantially across economic periods. The ten-year charge-off rate reached 35.78% for FY2007 approvals before declining considerably in later mature vintages.
 
-Recent approvals will remain visible in the volume charts, but they will not be presented as complete ten-year outcomes.
+Recent approval years remain visible in the volume charts but are not presented as complete ten-year outcomes.
 
-## 2. Risk and exposure concentration
+## 2. Where risk and exposure concentrate
 
-**Question:** Where were charge-offs frequent, and where were approved dollars concentrated?
+**Question:** Where were charge-offs more frequent, and where were approved dollars concentrated?
 
-A scatterplot will compare charge-off rates with gross approval share across:
+This story point compares:
 
-* Loan size
-* Original term
-* Industry
-* Business age
+- ten-year charge-off rates across loan-size segments
+- each segment’s share of gross approved dollars
+- charge-off patterns across 96-month and 120-month outcome windows
 
-This view will show why charge-off frequency and financial exposure should be monitored separately. Smaller loans had higher observed charge-off rates, while loans above $1 million represented more than half of approved-dollar exposure.
+Smaller loans had higher observed charge-off frequency, while loans above $1 million represented more than half of gross approved-dollar exposure. This demonstrates why risk frequency and financial exposure should be monitored separately.
 
-A supporting state view may show geographic exposure, but it will not rank states by risk.
+## 3. Geographic portfolio context
 
-## 3. Observed and adjusted risk
+**Question:** How are loan activity, exposure, and observed outcomes distributed across states and territories?
 
-**Question:** Which descriptive patterns remained after accounting for portfolio composition?
+The geographic view provides:
 
-An observed-versus-adjusted comparison will open with business age. Supporting charts will show adjusted relationships for loan amount, original term, guarantee percentage and initial interest rate.
+- state or territory name
+- eligible loan count
+- gross approval amount
+- portfolio share
+- ten-year charge-off rate
+- mix-adjusted risk estimate
 
-The main finding is that some descriptive patterns changed after adjustment. In particular, smaller loans had higher observed charge-off rates, but this relationship reversed after controlling for the available portfolio characteristics.
+The map is intended to provide portfolio context rather than a state risk ranking. Differences may reflect approval vintage, loan mix, sample size, and uneven model calibration across states.
 
-The dashboard will clearly describe adjusted estimates as associations, not causal effects.
+## 4. What changes after adjustment
 
-## 4. Model monitoring
+**Question:** Which descriptive patterns remain after accounting for observed portfolio composition?
+
+This story point compares observed and adjusted estimates for selected borrower and loan characteristics. It also shows adjusted risk across representative loan-size scenarios.
+
+The adjustment controls for approval vintage and available portfolio characteristics. These estimates describe associations and should not be interpreted as causal effects.
+
+## 5. How the model supports monitoring
 
 **Question:** What monitoring value does the predictive model provide?
 
-The model dashboard will present the main locked-test results:
+The final story point presents the primary locked-test results:
 
-| Metric              |  Result |
-| ------------------- | ------: |
-| PR-AUC              |   0.656 |
-| ROC-AUC             |   0.964 |
-| Brier score         | 0.03335 |
-| Observed event rate |   6.71% |
-| Mean predicted risk |   5.85% |
+| Metric | Result |
+|---|---:|
+| Test loans | 97,439 |
+| Observed charge-offs | 6,540 |
+| Observed event rate | 6.71% |
+| Mean predicted risk | 5.85% |
+| PR AUC | 0.656 |
+| ROC AUC | 0.964 |
+| Brier score | 0.03335 |
 
-The main chart will compare three review-capacity scenarios:
+It also compares monitoring-capacity scenarios:
 
-| Portfolio reviewed | Charge-offs captured |
-| -----------------: | -------------------: |
-|                 5% |                52.6% |
-|                10% |                82.3% |
-|                20% |                95.7% |
+| Portfolio reviewed | Observed charge-offs captured |
+|---:|---:|
+| 5% | 52.6% |
+| 10% | 82.3% |
+| 20% | 95.7% |
 
-The 10% scenario will be highlighted as an example of portfolio prioritisation, not as a recommended decision threshold.
+These are monitoring scenarios, not recommended decision thresholds. The calibration chart shows that the model ranked risk effectively but understated overall locked-test risk.
 
-A calibration chart will show that the model ranked risk effectively but slightly underpredicted the overall event rate. The model will be presented as a research tool for portfolio monitoring, not as a system for automated lending decisions.
+The model is presented as a research tool for retrospective portfolio monitoring and review prioritisation—not automated lending decisions.
 
 ## Visual approach
 
-The dashboards will use a consistent professional style:
+The story uses:
 
-* Navy for exposure
-* Amber for observed risk
-* Teal for adjusted estimates
-* Indigo for model results
-* Simple navigation in the same location on every dashboard
-* Clear annotations and short tooltips
-* No gauges, rainbow palettes or red-versus-green risk labels
+- consistent typography and spacing
+- a restrained professional colour palette
+- short explanatory subtitles
+- formatted tooltips
+- percentage and currency formatting appropriate to each measure
+- state abbreviations on the map and full state names in tooltips
+- consistent story-point navigation
 
-Borrower-level records, state risk rankings, processing-method rankings and detailed model-tuning results will remain outside the executive dashboards.
+The dashboards intentionally exclude borrower-level records, lender or borrower identifiers, individual model scores, state risk league tables, and detailed model-tuning results.
+
+## Live story
+
+[Open the interactive Tableau Public story](https://public.tableau.com/views/SBA7aLoanPortfolioRiskAnalytics/SBA7aLoanPortfolioRiskStory?:language=en-GB&:showVizHome=no)
