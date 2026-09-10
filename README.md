@@ -1,91 +1,85 @@
 # Small Business Loan Portfolio Risk Analytics
 
-An end-to-end analysis of U.S. Small Business Administration 7(a) loans, combining portfolio analysis, statistical adjustment, machine learning and Tableau-ready reporting to examine ten-year charge-off risk.
+An end-to-end portfolio-risk analysis of the U.S. Small Business Administration (SBA) 7(a) loan programme, combining historical trend analysis, statistical adjustment, machine-learning evaluation, privacy-safe data preparation, and an interactive Tableau story.
 
-> **Project status:** The Python analysis and Tableau data preparation are complete. The interactive Tableau dashboards will be added after the manual Tableau Desktop build.
+**[Explore the interactive Tableau story](https://public.tableau.com/views/SBA7aLoanPortfolioRiskAnalytics/SBA7aLoanPortfolioRiskStory?:language=en-GB&:showVizHome=no)**
+
+> **Project status:** Complete. The Python analysis, statistical modelling, machine-learning evaluation, Tableau-ready datasets, and interactive Tableau Public story are available.
 
 ## Project overview
 
-The SBA 7(a) programme supports lending to small businesses through participating lenders. This project examines how the portfolio changed over time, where observed charge-off risk and approved-dollar exposure were concentrated, which descriptive patterns remained after statistical adjustment, and whether an approval-time model could improve portfolio monitoring.
+This project examines how SBA 7(a) lending volume, exposure, and long-horizon charge-off risk vary across time, loan size, term, borrower characteristics, industry, and geography. It also evaluates whether a predictive model can support retrospective portfolio monitoring and risk-based review prioritisation.
 
-The analysis covers 1,961,455 published loan records from FY1991 through June 2026. The primary modelling outcome is charge-off within 120 months of approval. Only variables available at or near approval were considered as predictors.
-
-The final model is intended as a research tool for portfolio monitoring. It is not designed for automated loan approval, denial, pricing or borrower-level intervention.
+The analysis covers **1,961,455 loans from FY1991 through June 2026**. Ten-year charge-off outcomes are limited to **FY2001–FY2016**, where a complete 120-month performance window is available.
 
 ## Business questions
 
-- How did SBA 7(a) lending volume and portfolio composition change over time?
-- Which approval vintages and portfolio segments recorded higher ten-year charge-off rates?
-- Where did charge-off frequency and approved-dollar exposure tell different stories?
-- Which apparent risk patterns remained after controlling for vintage and observable portfolio mix?
-- Can approval-time information help concentrate monitoring attention on a smaller share of the portfolio?
-- How stable are model ranking and calibration across later approval periods?
+1. How has SBA 7(a) lending changed over time?
+2. Where are charge-off frequency and approved-dollar exposure concentrated?
+3. How do borrower, loan, industry, term, and geographic characteristics relate to risk?
+4. Which apparent differences remain after statistical adjustment?
+5. Can a predictive model rank risk well enough to support portfolio monitoring?
+6. How much observed charge-off activity can be captured under limited review capacity?
 
 ## Key findings
 
-- **Approval vintage mattered substantially.** FY2007 recorded a 35.78% ten-year charge-off rate, while eligible FY2011-FY2016 vintages ranged from 5.60% to 6.92%. This made temporal validation essential.
-- **Frequency and exposure were not the same.** Smaller loans had higher unadjusted charge-off frequency, but loans above $1 million represented 51.36% of gross approvals in the FY2010+ analytical cohort.
-- **The small-loan pattern changed after adjustment.** Once vintage and observable portfolio mix were controlled for, smaller loan amounts were not independently associated with higher estimated risk.
-- **Original term produced the strongest separation.** It also requires careful interpretation because term reflects product structure and interacts with the fixed 120-month outcome horizon.
-- **More history was not automatically better.** A model trained from FY2001 retained useful ranking information but produced probabilities that were less aligned with the later portfolio.
-- **Processing method was excluded from the final model.** Its small locked-test improvement did not outweigh inconsistent behaviour across validation periods.
+- Portfolio volume and approved dollars increased substantially over the study period, with notable cyclical disruption.
+- Ten-year charge-off rates peaked at **35.78% for FY2007 approvals** and later stabilised at approximately **5.60%–6.92% for FY2011–FY2016**.
+- Smaller loans had higher charge-off frequency, while loans above **$1 million represented 51.36% of gross approved dollars**, illustrating the difference between event frequency and dollar exposure.
+- Several descriptive gaps narrowed after controlling for approval vintage and available portfolio characteristics, indicating that portfolio mix matters.
+- The selected model showed strong rank ordering but understated absolute locked-test risk.
+- A small review share captured a large proportion of observed charge-offs, supporting use for retrospective monitoring and review prioritisation—not automated lending decisions.
 
-## Selected findings
+## Selected analytical findings
 
 ### Ten-year risk changed sharply across approval vintages
 
+Crisis-era vintages recorded substantially higher ten-year charge-off rates. This is why the analysis uses time-based validation rather than a random train-test split.
+
 ![Ten-year charge-off risk by approval vintage](reports/figures/portfolio/02_vintage_chargeoff_risk.png)
 
-Crisis-era vintages recorded substantially higher ten-year charge-off rates.
-This is why the analysis uses time-based validation rather than a random
-train-test split.
+### Risk frequency versus dollar exposure
 
-### Statistical adjustment changed the loan-size story
+The loan-size analysis separates two different portfolio questions:
+
+- **Risk frequency:** Which segments have higher charge-off rates?
+- **Dollar exposure:** Which segments account for the largest share of approved dollars?
+
+The higher unadjusted risk among smaller loans changed after accounting for vintage and observable portfolio characteristics.
+
+### Statistical adjustment
+
+Observed differences were compared with adjusted estimates that control for approval vintage and available portfolio characteristics. These estimates describe associations and should not be interpreted as causal effects.
 
 ![Adjusted loan-size and term relationships](reports/figures/statistics/01_adjusted_size_and_term.png)
 
-Smaller loans showed higher unadjusted charge-off rates, but that pattern
-reversed after accounting for vintage and observable portfolio characteristics.
-Original term remained strongly associated with the outcome.
-
 ## Final model
 
-The selected specification, E06, uses scikit-learn's `HistGradientBoostingClassifier`. It was trained on FY2010-FY2014 approvals and evaluated on a locked FY2015-FY2016 test population.
+The selected model was **E06, a HistGradientBoostingClassifier**, trained on FY2010–FY2014 loans and evaluated once on a locked FY2015–FY2016 test set.
 
-Predictors:
-
-- Gross approval amount
-- Original term
-- SBA guarantee percentage
-- Two-digit NAICS sector
-- Business age
-- Business type
-- Project state
-- Initial interest rate
-
-Approval vintage was used for temporal splitting and evaluation, not as a predictor. Borrower and lender identifiers, servicing fields, outcome fields and post-approval information were excluded.
+The predictors were gross approval amount, original term, SBA guarantee percentage, two-digit NAICS sector, business age, business type, project state, and initial interest rate. Approval vintage was used for temporal splitting and evaluation rather than as a predictor. Borrower and lender identifiers, servicing fields, outcome fields, and post-approval information were excluded.
 
 ### Locked-test performance
 
 | Metric | Result |
 |---|---:|
 | Test loans | 97,439 |
-| Charge-offs within 120 months | 6,540 |
+| Observed charge-offs | 6,540 |
 | Observed event rate | 6.71% |
-| PR-AUC | 0.656 |
-| ROC-AUC | 0.964 |
+| PR AUC | 0.656 |
+| ROC AUC | 0.964 |
 | Brier score | 0.03335 |
 | Mean predicted risk | 5.85% |
 
-The model provided useful risk ranking, but its average predicted risk was below the observed event rate. It should therefore not be described as operationally calibrated or deployment-ready.
+The model discriminated well between lower- and higher-risk loans, but its mean predicted probability was below the observed event rate. For this reason, model scores are most appropriate for **ranking, surveillance, and review prioritisation**, not as perfectly calibrated probabilities.
+
+### Feature importance
+
+Permutation importance showed that original term was the dominant model feature, followed by initial interest rate, guarantee percentage, project state, gross approval amount, industry, business type, and business age.
 
 ![Model feature contribution](reports/figures/modeling/03_grouped_permutation_importance.png)
 
-Original term contributed most to model ranking, although this relationship
-must be interpreted alongside product structure and the fixed 120-month outcome
-window.
-
-### Monitoring-capacity scenarios
+### Monitoring capacity
 
 | Share of portfolio reviewed | Charge-offs captured | Precision | Lift |
 |---:|---:|---:|---:|
@@ -95,60 +89,63 @@ window.
 
 ![Charge-offs captured by review capacity](reports/figures/modeling/02_monitoring_capacity.png)
 
-The 10% scenario illustrates how a portfolio team could assess monitoring capacity. It is not a recommended operational threshold.
+The 10% scenario illustrates how a portfolio team could assess monitoring capacity; it is not a recommended operational threshold.
 
 ## Analytical approach
 
 1. **Source validation:** Verified the four official SBA files against the 42-field data dictionary and recorded file hashes.
-2. **Data-quality assessment:** Profiled missingness, dates, categories, numeric anomalies, potential duplicates and feature timing.
+2. **Data-quality assessment:** Profiled missingness, dates, categories, numeric anomalies, potential duplicates, and feature timing.
 3. **Cohort design:** Constructed a fixed 120-month outcome while accounting for incomplete follow-up and invalid event timing.
-4. **Portfolio analysis:** Compared approval volume, vintage risk, segment frequency and gross-approval exposure.
+4. **Portfolio analysis:** Compared approval volume, vintage risk, segment frequency, and gross-approval exposure.
 5. **Statistical analysis:** Estimated adjusted relationships using multivariable logistic regression and marginal standardisation.
-6. **Machine learning:** Compared regularized logistic regression with histogram gradient boosting using expanding-window validation.
-7. **Locked evaluation:** Assessed ranking, calibration, temporal stability and monitoring-capacity scenarios on later vintages.
-8. **Tableau preparation:** Created privacy-safe aggregate sources for four connected dashboards.
+6. **Machine learning:** Compared regularised logistic regression with histogram gradient boosting using expanding-window validation.
+7. **Locked evaluation:** Assessed ranking, calibration, temporal stability, and monitoring-capacity scenarios on later vintages.
+8. **Tableau reporting:** Prepared privacy-safe aggregate sources and built five connected dashboards within an interactive story.
 
-## Tableau story
+## Interactive Tableau story
 
-The planned Tableau portfolio contains four connected views:
+The completed Tableau Public story guides viewers through the analysis in five steps:
 
-1. **Portfolio & Vintage Context:** How did lending volume, exposure and observed risk change?
-2. **Risk Frequency & Exposure Concentration:** Which segments mattered because of event frequency, dollar exposure or both?
-3. **Observed vs Adjusted Risk:** Which descriptive patterns remained after statistical adjustment?
-4. **Model Monitoring & Capacity:** What additional monitoring value did E06 provide, and where are its limits?
+1. **How the portfolio changed** — approval volume, gross approval amount, and ten-year charge-off trends.
+2. **Where risk and exposure concentrate** — loan-size risk frequency, dollar exposure, and term sensitivity.
+3. **Geographic portfolio context** — state-level portfolio share, loan volume, and risk measures through an interactive map.
+4. **What changes after adjustment** — observed versus adjusted segment risk and adjusted loan-size scenarios.
+5. **How the model supports monitoring** — locked-test metrics, calibration by score decile, review-capacity capture, and feature importance.
 
-<!-- Add the final Tableau dashboard image and Tableau Public link here after the workbook is complete. -->
+Viewers can move between story points, hover over marks for detailed tooltips, and interact with the geographic map. State-level results provide portfolio context rather than a risk league table; differences may reflect loan mix, approval vintage, and uneven calibration across states.
+
+**[Open the live Tableau story](https://public.tableau.com/views/SBA7aLoanPortfolioRiskAnalytics/SBA7aLoanPortfolioRiskStory?:language=en-GB&:showVizHome=no)**
 
 ## Repository guide
 
 ```text
 Credit-Risk-Analytics/
-|-- README.md
-|-- requirements.txt
-|-- data/                  # Download instructions; raw data remains local
-|-- docs/                  # Methodology, findings and model documentation
-|-- src/
-|   |-- data/              # Source validation and cohort preparation
-|   |-- analysis/          # Portfolio and statistical analysis
-|   |-- modeling/          # Model training and evaluation
-|   `-- tableau/           # Tableau aggregate-data preparation
-|-- reports/
-|   |-- figures/           # Selected analytical charts
-|   `-- tables/            # Selected aggregate results
-|-- tableau/
-|   `-- data/              # Privacy-safe aggregate CSV sources
-`-- config/                # Frozen model configuration
+├── README.md
+├── requirements.txt
+├── data/                    # Download instructions; raw data remains local
+├── docs/                    # Methodology, findings, and model documentation
+├── src/
+│   ├── data/                # Source validation and cohort preparation
+│   ├── analysis/            # Portfolio and statistical analysis
+│   ├── modeling/            # Model training and evaluation
+│   └── tableau/             # Tableau aggregate-data preparation
+├── reports/
+│   ├── figures/             # Selected analytical charts
+│   └── tables/              # Selected aggregate results
+├── tableau/
+│   └── data/                # Privacy-safe aggregate CSV sources
+└── config/                  # Frozen model configuration
 ```
 
 ## Data
 
 Source: [U.S. Small Business Administration 7(a) & 504 FOIA dataset](https://data.sba.gov/dataset/7a-504-foia)
 
-This project uses only the four 7(a) CSV files and the 7(a) worksheet from the official data dictionary. The two 504 files are outside scope.
+This project uses only the four 7(a) CSV files and the 7(a) worksheet from the official data dictionary; the two 504 files are outside scope.
 
-Raw files are not stored in this repository. Although the source is publicly available, the files are large and contain borrower names and addresses that are unnecessary for a public portfolio. Reproduction instructions and expected filenames are provided in `data/README.md`.
+Raw files are not stored in this repository. Although the source is publicly available, the files are large and contain borrower names and addresses that are unnecessary for a public portfolio. Reproduction instructions and expected filenames are provided in `data/README.md`. Tableau outputs are aggregated or otherwise prepared to avoid exposing unnecessary loan-level detail.
 
-## Reproducing the analysis
+## Reproduction
 
 Create and activate a virtual environment, then install the project dependencies:
 
@@ -156,17 +153,25 @@ Create and activate a virtual environment, then install the project dependencies
 python -m venv .venv
 ```
 
-Windows PowerShell:
+Activate the environment:
 
-```powershell
-.\.venv\Scripts\Activate.ps1
+```bash
+# macOS/Linux
+source .venv/bin/activate
+
+# Windows PowerShell
+.venv\Scripts\Activate.ps1
+```
+
+Install the dependencies:
+
+```bash
 pip install -r requirements.txt
 ```
 
-After downloading the four official 7(a) files and the data dictionary into
-`data/raw/`, run the main analysis from the repository root:
+After downloading the four official 7(a) files and the data dictionary into `data/raw/`, run the main analysis from the repository root:
 
-```powershell
+```bash
 python src/data/verify_schema.py
 python src/data/profile_data_quality.py
 python src/data/build_cohort.py
@@ -174,10 +179,9 @@ python src/analysis/analyze_portfolio.py
 python src/analysis/run_statistical_analysis.py
 ```
 
-The modelling workflow is separated into auditable stages because it is more
-computationally expensive:
+Run the modelling workflow in its auditable stages:
 
-```powershell
+```bash
 python src/modeling/train_and_evaluate.py audit
 python src/modeling/train_and_evaluate.py develop
 python src/modeling/train_and_evaluate.py test
@@ -186,34 +190,36 @@ python src/modeling/run_sensitivity_checks.py
 python src/tableau/prepare_tableau_data.py
 ```
 
-The `develop` and `test` stages refit multiple models and can take considerable
-time on a local computer. Existing aggregate results are included for review.
+The `develop` and `test` stages refit multiple models and may take considerable time on a local computer. Existing aggregate results are included for review.
 
 ## Tools
 
 - Python
 - pandas and NumPy
-- SciPy
 - scikit-learn
-- Matplotlib
+- SciPy
+- Matplotlib and Seaborn
 - Excel
-- Tableau
+- Tableau Public
 - Git and GitHub
 
 ## Limitations
 
-- The published data does not include credit scores, borrower financial statements, verified collateral values or complete underwriting information.
+- The published data does not include credit scores, borrower financial statements, verified collateral values, or complete underwriting information.
 - Complete ten-year follow-up limits the primary outcome population to older approvals.
 - The primary FY2010+ analysis contains seven eligible approval vintages.
 - The locked test covers FY2015 and only the eligible portion of FY2016.
+- FY2026 is partial through June and is not directly comparable with complete fiscal years.
 - The selected model underpredicted the locked-test event rate.
-- Programme rules, portfolio composition and category definitions changed over time.
+- Programme rules, portfolio composition, and category definitions changed over time.
 - State improved aggregate model performance, but state-level calibration was uneven.
 - Original term may capture product structure and the relationship between contractual term and the fixed outcome horizon.
 - The findings describe historical and predictive associations, not causal effects.
 
 ## Responsible use
 
-This work supports aggregate portfolio analysis and monitoring research. It does not evaluate individual borrower quality, approval suitability, discrimination or fair-lending compliance. No borrower-level predictions, names, addresses, exact ZIP-level records or fitted model binaries are included in the public repository.
+This work supports aggregate portfolio analysis and monitoring research. It does not evaluate individual borrower quality, approval suitability, discrimination, or fair-lending compliance. No borrower-level predictions, names, addresses, exact ZIP-level records, or fitted model binaries are included in the public repository.
 
-The project is independent and is not endorsed by the U.S. Small Business Administration.
+It should not be used as an automated lending-decision system or as evidence of causal effects. Any operational use would require governance, fairness assessment, calibration monitoring, documentation, and human oversight.
+
+This project is independent and is not endorsed by the U.S. Small Business Administration.
